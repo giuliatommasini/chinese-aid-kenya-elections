@@ -63,7 +63,7 @@ foreach dir in "$output" "$output/tables" "$output/figures" "$temp" ///
 }
 
 ********************************************************************************
-* 0. EXTRACT: election results from the IEBC PDFs (optional)
+* 0. EXTRACT: election results from the IEBC PDFs
 *    The extracted results were then cleaned and saved as
 *    data/Voting/Elections Results/01_Cleaned Data/Results_National_Assembly_*.csv,
 *    which are included in the repository. Skip this step to use them directly.

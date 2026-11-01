@@ -16,7 +16,7 @@ World Bank projects serve as a comparison donor and as a placebo. Robustness che
 ```
 master.do                 runs the whole pipeline
 code/
-  00_extract/             Python: extract election results from the IEBC PDFs (optional)
+  00_extract/             Python: extract election results from the IEBC PDFs
   01_clean/               clean raw aid, election, shapefile and Afrobarometer data
   02_build/               build the electoral and survey panels, spillover measures, merges
   03_analysis/            regressions, tables and coefficient plots
@@ -36,7 +36,7 @@ The raw data is **not** included in this repository. Most sources have their own
 | **Afrobarometer, geocoded** (Kenya, rounds 2–6) | Survey outcomes; respondent coordinates are used to assign respondents to constituencies | Respondent-level coordinates are restricted; request access from [Afrobarometer](https://www.afrobarometer.org/geocoded-data/) (geocoding by [AidData](https://aiddata.org/data/geocoded-afrobarometer-data-v1)) | `data/Afrobarometer/00_Raw Data/KEN_r2.xlsx` … `KEN_r6.xlsx` (sheet `Sheet1`, with `latitude` and `longitude`) |
 | **IEBC election results**, 2013 and 2017 (Independent Electoral and Boundaries Commission of Kenya) | National Assembly results by constituency and candidate | Public PDFs from [iebc.or.ke](https://www.iebc.or.ke/). The files used are `EIqEo3LuiB.pdf` (2013) and `siEABKREDq.pdf` (2017) | `data/Voting/Elections Results/00_Raw Data/` (only needed to re-run the extraction) |
 | **GADM 3.6**, Kenya | Constituency (level 2) boundaries, used to map projects and respondents and to find neighbours | [gadm.org](https://gadm.org/download_country36.html) (shapefile) | `data/Geo/gadm36_KEN_shp/gadm36_KEN_2.shp` (and the other shapefile parts) |
-| **Kenya constituency boundaries** (290 constituencies, IEBC boundaries in use since the 2013 election) | Maps of the winning coalition by constituency, 2013 and 2017 | Public shapefile; original download source not recorded. Any 290-constituency boundary file with constituency names should work | `data/Geo/Kenya_Constituencies/Constituencies.shp` (fields `CONST_NAME`, `COUNTY_NAM`) |
+| **Kenya constituency boundaries** (290 constituencies, IEBC boundaries in use since the 2013 election) | Maps of the winning coalition by constituency, 2013 and 2017 | Public shapefile | `data/Geo/Kenya_Constituencies/Constituencies.shp` (fields `CONST_NAME`, `COUNTY_NAM`) |
 | **AidData GeoQuery** extract, Kenya ADM2 ([Goodman et al. 2019](https://www.aiddata.org/geoquery)) | Baseline controls: political leader birthplace (PLAD), population density (GPW v4), night-time lights, travel time to cities, slope, distance to roads | [geoquery.org](https://www.aiddata.org/geoquery), Kenya at ADM2 level | `data/Controls/controls.csv` |
 
 **Included in the repository:** `data/Voting/Elections Results/01_Cleaned Data/Results_National_Assembly_2013.csv` and `..._2017.csv`. These are the constituency-level National Assembly results that I extracted from the public IEBC PDFs (`code/00_extract`) and then cleaned. The analysis starts from these files.
@@ -45,7 +45,7 @@ The raw data is **not** included in this repository. Most sources have their own
 
 **Requirements**
 - Stata 18 or later. `master.do` installs the SSC packages it needs if they are missing: `reghdfe`, `ftools`, `estout`, `spmap`, `shp2dta`, `geoinpoly`.
-- Python 3.10+ with `pip install -r requirements.txt`. This is used for the spillover measures and, optionally, the PDF extraction.
+- Python 3.10+ with `pip install -r requirements.txt`. This is used for the spillover measures and the PDF extraction.
 
 **Steps**
 1. Download the data above into `data/`.
@@ -59,7 +59,7 @@ At the top of `master.do` you can change the data folder (`$data`) and the Pytho
 
 ## What each script does
 
-### 00_extract (Python, optional)
+### 00_extract (Python)
 | Script | Description |
 |---|---|
 | `extract_pdf.py` | Reads the result tables from the IEBC PDFs with `pdfplumber`, drops repeated headers and logs rows it cannot parse cleanly |
@@ -104,6 +104,3 @@ At the top of `master.do` you can change the data folder (`$data`) and the Pytho
 | Script | Description |
 |---|---|
 | `01_descriptives.do` | Projects and commitments over time, sector and size comparisons (China vs World Bank), winning-coalition maps |
-
-### Not produced by the code
-The flagship-projects table (`Descriptive_main_proj.tex`) was written by hand. The project-location maps (`china_kenya_map_v4`, `wb_kenya_map-2`) and the ethnicity map (`kenya_ethnicity_constituencies_v2`) were made outside this pipeline. The ethnicity map uses the *Kenya Ethnic Tribes and Languages* dataset from the IGAD Climate Prediction and Applications Centre (ICPAC) GeoPortal.
