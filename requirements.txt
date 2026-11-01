@@ -1,0 +1,4 @@
+pandas>=2.0
+numpy
+geopandas>=1.0
+pdfplumber  # only for code/00_extract

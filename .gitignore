@@ -1,0 +1,24 @@
+# Data: not redistributed (see README for where to download it)
+data/**
+!data/**/
+!data/Voting/Elections Results/01_Cleaned Data/Results_National_Assembly_2013.csv
+!data/Voting/Elections Results/01_Cleaned Data/Results_National_Assembly_2017.csv
+
+# Outputs (tables, figures, scratch files)
+output/
+debug/
+*.log
+*.smcl
+*.dta
+*.gph
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
