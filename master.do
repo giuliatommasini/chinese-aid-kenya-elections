@@ -123,8 +123,6 @@ if $run_analysis {
 
     * Survey analysis
     do "$code/03_analysis/04_survey_coefplots.do"
-    * 05 runs after 04 on purpose: both write the Donor_*.tex tables, and the
-    * versions used in the thesis are the ones from 05
     do "$code/03_analysis/05_survey_main_tables.do"
     do "$code/03_analysis/06_survey_pretrends.do"
     do "$code/03_analysis/07_survey_restricted_sample.do"

@@ -1310,23 +1310,3 @@ collabels(none) nonotes ///
 sfmt(%9.3fc %9.3fc %9.3fc %9.3fc %9.0fc) noobs 
 
 eststo clear 
-
-
-* ---- End of the code used for the thesis. The code below was exploratory
-* ---- and is not run (exit returns control to master.do).
-exit
-
-* drop units with any treated neighbor (immediate neighbors)
-preserve
-keep if borders_treated==0   // only units with no treated neighbor
-eststo buffer_no_border: reghdfe good_performance_MP num_projects_ch $controls_dem [pw=withinwt], ///
-    absorb(_ID year eth_FE) vce(cluster _ID)
-restore
-
-reghdfe good_performance_MP c.num_projects_ch##i.has_neigh $controls_dem [pw=withinwt], ///
-    absorb(_ID year eth_FE) vce(cluster _ID)
-
-
-
-eststo performance_mp_r: reghdfe good_performance_MP c.spillover_intensity##c.wave $controls_dem [pw=withinwt], absorb(_ID year eth_FE) vce(cluster _ID)
-

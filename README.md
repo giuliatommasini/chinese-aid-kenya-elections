@@ -93,8 +93,8 @@ At the top of `master.do` you can change the data folder (`$data`) and the Pytho
 | `01_electoral_main.do` | Main electoral DiD tables (projects, value, logs) and World Bank / restricted-sample tables |
 | `02_electoral_pretrends_permutation.do` | Leader-birthplace allocation test, placebo tables and permutation-test figures |
 | `03_electoral_spillovers.do` | Electoral spillover tables |
-| `04_survey_coefplots.do` | Survey coefficient plots (living conditions, political perceptions, democracy) and trust tables |
-| `05_survey_main_tables.do` | Full survey tables in the appendix (flow and stock panels). Runs after `04`, which writes tables with the same names |
+| `04_survey_coefplots.do` | Survey coefficient plots (living conditions, political perceptions, democracy) |
+| `05_survey_main_tables.do` | Full survey tables in the appendix (flow and stock panels) |
 | `06_survey_pretrends.do` | Survey pre-trend (leads) tables and birthplace test |
 | `07_survey_restricted_sample.do` | Survey results on the restricted sample |
 | `08_survey_placebo_wb.do` | World Bank placebo for the survey outcomes |
@@ -104,8 +104,6 @@ At the top of `master.do` you can change the data folder (`$data`) and the Pytho
 | Script | Description |
 |---|---|
 | `01_descriptives.do` | Projects and commitments over time, sector and size comparisons (China vs World Bank), winning-coalition maps |
-
-Some scripts end with an `exit` line: the code below it was exploratory and does not produce any result in the thesis, so it is not run.
 
 ### Not produced by the code
 The flagship-projects table (`Descriptive_main_proj.tex`) was written by hand. The project-location maps (`china_kenya_map_v4`, `wb_kenya_map-2`) and the ethnicity map (`kenya_ethnicity_constituencies_v2`) were made outside this pipeline. The ethnicity map uses the *Kenya Ethnic Tribes and Languages* dataset from the IGAD Climate Prediction and Applications Centre (ICPAC) GeoPortal.
