@@ -561,7 +561,9 @@ graph export "$output_figures/main_survey_democracy_mon_wb.pdf", replace
 
 restore 
 
-SSSS 
+* ---- End of the code used for the thesis. The code below was exploratory
+* ---- and is not run (exit returns control to master.do).
+exit
 **--------------------------------------------------**
 **					STOCK ANALYSIS				  	**
 **--------------------------------------------------**

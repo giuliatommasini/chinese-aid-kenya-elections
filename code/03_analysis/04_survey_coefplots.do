@@ -554,7 +554,9 @@ twoway ///
 graph export "$output_figures/main_survey_democracy_mon.pdf", replace 
 
 restore 
-SSSSSS
+* ---- End of the code used for the thesis. The code below was exploratory
+* ---- and is not run (exit returns control to master.do).
+exit
 
 **--------------------------------------------------**
 **					STOCK ANALYSIS				  	**
@@ -4113,7 +4115,7 @@ collabels(none) nonotes noobs
 
 eststo clear 
 
-SSSSSSS
+exit
 
 gen as_mon_value_ch = asinh(mon_value_ch_million)
 gen as_mon_value_wb = asinh(mon_value_wb_million)
@@ -4203,7 +4205,7 @@ marginsplot, ///
     addplot(histogram ln_mon_value_ch, percent yaxis(2)) ///
     ytitle("Pr(improving)") 
 
-SSSSSS 
+exit
 
 preserve
 
@@ -4316,7 +4318,7 @@ graph export "$output_figures/coef_plot_manageecon_mon.png", replace
 
 restore 
 
-SSSSSS 
+exit
 
 * Adoption wave (first wave with positive cumulative projects)
 bysort _ID (wave): egen adopt_w = min(cond(num_projects_ch>0, wave, .))
@@ -4397,7 +4399,7 @@ reghdfe good_performance_MP i.evt_s#i.treated ///
 
 
 
-SSSTOP
+exit
 
 **--------------------------------------------------**
 **				APPENDIX: NOT INCLUDED			  	**

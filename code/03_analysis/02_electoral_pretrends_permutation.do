@@ -1017,7 +1017,9 @@ twoway ///
 graph export "$output_figures/permutation_ln_mon.pdf", replace 
 
 
-SSSSS
+* ---- End of the code used for the thesis. The code below was exploratory
+* ---- and is not run (exit returns control to master.do).
+exit
 *** Create a constituency-level file of exposure: Binary Exposure ***
 
 clear all 

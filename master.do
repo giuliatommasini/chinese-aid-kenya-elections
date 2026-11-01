@@ -105,10 +105,9 @@ if $run_build {
 
     * Survey panel (respondent x Afrobarometer round)
     do "$code/02_build/06_build_survey_panel.do"
-    do "$code/02_build/07_build_constituency_ids.do"
-    do "$code/02_build/08_build_aid_survey.do"
-    shell "$python" "$code/02_build/09_survey_spillovers.py" "$data"
-    do "$code/02_build/10_merge_survey.do"
+    do "$code/02_build/07_build_aid_survey.do"
+    shell "$python" "$code/02_build/08_survey_spillovers.py" "$data"
+    do "$code/02_build/09_merge_survey.do"
     cd "$root"
 }
 

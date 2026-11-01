@@ -165,7 +165,9 @@ drop n_value
 save "$survey_data/aid_survey_final_combined.dta", replace
 
 
-SSSSSSSTOP
+* ---- End of the code used for the thesis. The code below was exploratory
+* ---- and is not run (exit returns control to master.do).
+exit
 
 ******************************************
 ** 			Panel construction 			**

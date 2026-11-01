@@ -1312,7 +1312,9 @@ sfmt(%9.3fc %9.3fc %9.3fc %9.3fc %9.0fc) noobs
 eststo clear 
 
 
-SSSSS 
+* ---- End of the code used for the thesis. The code below was exploratory
+* ---- and is not run (exit returns control to master.do).
+exit
 
 * drop units with any treated neighbor (immediate neighbors)
 preserve

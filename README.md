@@ -83,10 +83,9 @@ At the top of `master.do` you can change the data folder (`$data`) and the Pytho
 | `04_electoral_spillovers.py` | Finds neighbouring constituencies and computes neighbours' exposure (electoral panel) |
 | `05_merge_electoral_spillovers_controls.do` | Adds spillover measures and controls: the final electoral dataset |
 | `06_build_survey_panel.do` | Stacks the Afrobarometer rounds and builds the constituency × round skeleton |
-| `07_build_constituency_ids.do` | List of constituencies with projects (panel universe) |
-| `08_build_aid_survey.do` | Cumulative (stock) and inter-round (flow) project exposure by constituency and round |
-| `09_survey_spillovers.py` | Neighbours' exposure for the survey panel |
-| `10_merge_survey.do` | Merges survey responses, aid exposure, spillovers and controls: the final survey dataset |
+| `07_build_aid_survey.do` | Cumulative (stock) and inter-round (flow) project exposure by constituency and round |
+| `08_survey_spillovers.py` | Neighbours' exposure for the survey panel |
+| `09_merge_survey.do` | Merges survey responses, aid exposure, spillovers and controls: the final survey dataset |
 
 ### 03_analysis
 | Script | Thesis output |
@@ -105,6 +104,8 @@ At the top of `master.do` you can change the data folder (`$data`) and the Pytho
 | Script | Description |
 |---|---|
 | `01_descriptives.do` | Projects and commitments over time, sector and size comparisons (China vs World Bank), winning-coalition maps |
+
+Some scripts end with an `exit` line: the code below it was exploratory and does not produce any result in the thesis, so it is not run.
 
 ### Not produced by the code
 The flagship-projects table (`Descriptive_main_proj.tex`) was written by hand. The project-location and ethnicity maps (`china_kenya_map_v4`, `wb_kenya_map-2`, `kenya_ethnicity_constituencies_v2`) were made outside this pipeline.
